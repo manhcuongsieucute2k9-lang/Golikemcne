@@ -18,11 +18,34 @@ except ImportError:
     os.system("pip install tabulate")
     os.system("pip install art")
     os.system("pip install colorama")
+banner = f"""
+      \033[1;32m██████\033[1;33m╗         \033[1;32m████████\033[1;33m╗ \033[1;32m██████\033[1;33m╗  \033[1;32m██████\033[1;33m╗ \033[1;32m██\033[1;33m╗
+     \033[1;32m██\033[1;33m╔════╝         ╚══\033[1;32m██\033[1;33m╔══╝\033[1;32m██\033[1;33m╔═══\033[1;32m██\033[1;33m╗\033[1;32m██\033[1;33m╔═══\033[1;32m██\033[1;33m╗\033[1;32m██\033[1;33m║
+    \033[1;32m ██\033[1;33m║       \033[1;32m█████\033[1;33m╗    \033[1;32m██\033[1;33m║   \033[1;32m██\033[1;33m║   \033[1;32m██\033[1;33m║\033[1;32m██\033[1;33m║   \033[1;32m██\033[1;33m║\033[1;32m██\033[1;33m║
+    \033[1;32m ██\033[1;33m║       ╚════╝    \033[1;32m██\033[1;33m║   \033[1;32m██\033[1;33m║   \033[1;32m██\033[1;33m║\033[1;32m██\033[1;33m║   \033[1;32m██\033[1;33m║\033[1;32m██\033[1;33m║
+     ╚\033[1;32m██████\033[1;33m╗           \033[1;32m ██\033[1;33m║   ╚\033[1;32m██████\033[1;33m╔╝╚\033[1;32m██████\033[1;33m╔╝\033[1;32m███████\033[1;33m╗
+      ╚═════╝            ╚═╝    ╚═════╝  ╚═════╝  ╚═════╝\n
+\033[1;32m════════════════════════════════════════════════════════════
+         \033[1;0m            ADMIN INFORMATION
+\033[1;32m════════════════════════════════════════════════════════════
+\033[1;35mName                :  Cường Lập Trình
+\033[1;35mPosition            :  Admin / Lead Developer
+\033[1;34mPhone Zalo          :  0859652100
+\033[1;0mFacebook Admin      :  https://fb.com/manhcuongutvl.dz
+\033[1;32mTools               :  Golike Linkedin Auto Click
+\033[1;0mMua Paid Key Tại.   :  https://cardso1vn.x10.mx/add_key.php
+\033[1;0mVersion             :  3.2.5
+\033[1;32mLink Box Zalo       :  Đang Cập Nhật
+\033[1;33mMomo/Mb             :  0859652100(Momo) - 666080629(MB)
+\033[1;32m════════════════════════════════════════════════════════════
+
+"""
 def countdown(time_sec):
     for remaining_time in range(time_sec, -1, -1):
         colors = [
             "\033[1;37mC\033[1;36m-\033[1;35mT\033[1;32mO\033[1;31mO\033[1;34mL \033[1;33m- \033[1;36mT\033[1;36mO\033[1;36mO\033[1;31mL \033[1;33mV\033[1;35mI\033[1;33mP",
             "\033[1;33mC\033[1;32m-\033[1;0mT\033[1;34mO\033[1;35mO\033[1;36mL \033[1;33m- \033[1;32mT\033[1;34mO\033[1;35mO\033[1;31mL \033[1;32mV\033[1;34mI\033[1;32mP",
+            "\033[1;37mC\033[1;36m-\033[1;35mT\033[1;32mO\033[1;31mO\033[1;34mL \033[1;33m- \033[1;36mT\033[1;36mO\033[1;36mO\033[1;31mL \033[1;33mV\033[1;35mI\033[1;33mP",
             "\033[1;37mC\033[1;36m-\033[1;35mT\033[1;32mO\033[1;31mO\033[1;34mL \033[1;33m- \033[1;36mT\033[1;36mO\033[1;36mO\033[1;31mL \033[1;33mV\033[1;35mI\033[1;33mP",
             "\033[1;32mC\033[1;31m-\033[1;34mT\033[1;35mO\033[1;32mO\033[1;31mL \033[1;33m- \033[1;33mT\033[1;31mO\033[1;34mO\033[1;32mL \033[1;34mV\033[1;36mI\033[1;31mP",
             "\033[1;37mC\033[1;36m-\033[1;35mT\033[1;32mO\033[1;31mO\033[1;34mL \033[1;33m- \033[1;36mT\033[1;36mO\033[1;36mO\033[1;31mL \033[1;33mV\033[1;35mI\033[1;33mP",
@@ -78,7 +101,7 @@ def LINKEDIN():
         account_id = account_id1[0]
         checkfile = os.path.isfile('COOKIELINKEDIN'+str(account_id)+'.txt')
         if checkfile == False:
-            banner()
+            print(banner)
             COOKIELINK = input(gl_mc1+'\033[1;32mNhập Cookie Linkedin: \033[1;33m')
             createfile = open('COOKIELINKEDIN'+str(account_id)+'.txt','w')
             createfile.write(COOKIELINK)
@@ -91,7 +114,7 @@ def LINKEDIN():
             COOKIELINK = readfile.read()
             readfile.close()
         os.system('cls' if os.name== 'nt' else 'clear')
-        banner()
+        print(banner)
         choose = int(input(gl_mc1+'\033[1;32mNhập Số Lượng Job: \033[1;33m'))
         DELAY = int(input(gl_mc1+'\033[1;32mNhập Delay: \033[1;33m'))
         print("\033[1;32m════════════════════════════════════════════════")
@@ -610,40 +633,11 @@ def LINKEDIN():
                 else:        
                     print(checkurl2['message'])
                     countdown(15)
-
-def banner():
- os.system("cls" if os.name == "nt" else "clear")
- banner = f"""
-      \033[1;32m██████\033[1;33m╗         \033[1;32m████████\033[1;33m╗ \033[1;32m██████\033[1;33m╗  \033[1;32m██████\033[1;33m╗ \033[1;32m██\033[1;33m╗
-     \033[1;32m██\033[1;33m╔════╝         ╚══\033[1;32m██\033[1;33m╔══╝\033[1;32m██\033[1;33m╔═══\033[1;32m██\033[1;33m╗\033[1;32m██\033[1;33m╔═══\033[1;32m██\033[1;33m╗\033[1;32m██\033[1;33m║
-    \033[1;32m ██\033[1;33m║       \033[1;32m█████\033[1;33m╗    \033[1;32m██\033[1;33m║   \033[1;32m██\033[1;33m║   \033[1;32m██\033[1;33m║\033[1;32m██\033[1;33m║   \033[1;32m██\033[1;33m║\033[1;32m██\033[1;33m║
-    \033[1;32m ██\033[1;33m║       ╚════╝    \033[1;32m██\033[1;33m║   \033[1;32m██\033[1;33m║   \033[1;32m██\033[1;33m║\033[1;32m██\033[1;33m║   \033[1;32m██\033[1;33m║\033[1;32m██\033[1;33m║
-     ╚\033[1;32m██████\033[1;33m╗           \033[1;32m ██\033[1;33m║   ╚\033[1;32m██████\033[1;33m╔╝╚\033[1;32m██████\033[1;33m╔╝\033[1;32m███████\033[1;33m╗
-      ╚═════╝            ╚═╝    ╚═════╝  ╚═════╝  ╚═════╝\n
-\033[1;32m════════════════════════════════════════════════════════════
-         \033[1;0m            ADMIN INFORMATION
-\033[1;32m════════════════════════════════════════════════════════════
-\033[1;35mName                :  Cường Lập Trình
-\033[1;35mPosition            :  Admin / Lead Developer
-\033[1;34mPhone Zalo          :  0859652100
-\033[1;0mFacebook Admin      :  https://fb.com/manhcuongutvl.dz
-\033[1;32mTools               :  Golike Linkedin Auto Click
-\033[1;0mMua Paid Key Tại.   :  https://cardso1vn.x10.mx/add_key.php
-\033[1;0mVersion             :  3.2.5
-\033[1;32mLink Box Zalo       :  Đang Cập Nhật
-\033[1;33mMomo/Mb             :  0859652100(Momo) - 666080629(MB)
-\033[1;32m════════════════════════════════════════════════════════════
-"""
- for X in banner:
-  sys.stdout.write(X)
-  sys.stdout.flush() 
-  sleep(0.00125)
-
 def LIST():
-    banner()
+    print(banner)
     print(gl_mc+"\033[1;32mNhập [\033[1;33m1\033[1;32m] \033[1;32mĐể Vào Tool Linkedin")
 os.system('cls' if os.name== 'nt' else 'clear')
-banner()
+print(banner)
 checkfile = os.path.isfile('user.txt')
 if checkfile == False:
     AUTHUR = input(gl_mc1+'\033[1;32mNHẬP Authorization Golike: ')
@@ -931,7 +925,7 @@ if checkurl1['status']== 200 :
         print('\033[1;32mĐĂNG NHẬP THÀNH CÔNG')
         time.sleep(3)
         os.system('cls' if os.name== 'nt' else 'clear')
-        # banner()
+        # print(banner)
         # print(Fore.BLUE + '1.Tool Golike Mobile')
         # choose = int(input(Fore.WHITE + 'Nhập Lựa Chọn : '))
         # if choose == 1 :
@@ -943,7 +937,7 @@ if checkurl1['status']== 200 :
         choose = int(input(gl_mc1+'\033[1;32mNhập Lựa Chọn : '))
         if choose == 1:
             os.system('cls' if os.name== 'nt' else 'clear')
-            banner()
+            print(banner)
             ip = requests.get('https://api.ipify.org?format=json').json()
             print('\033[1;33mDanh Sách Tài Khoản')
             print('\033[1;32m_________________________________________________________\n')
